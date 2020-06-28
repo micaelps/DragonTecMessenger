@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "930258943919",
+    "firebase_url": "https://dragontecmessenger.firebaseio.com",
+    "project_id": "dragontecmessenger",
+    "storage_bucket": "dragontecmessenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930258943919:android:b588dd5a1332bbd82d795a",
+        "android_client_info": {
+          "package_name": "com.micaelps.dragontecmessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930258943919-1hn1li3f8llgm51u2fk7p85pd9vula5s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATTl2b-eUTISOItuwZscghqDl_ZNJn7Xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930258943919-1hn1li3f8llgm51u2fk7p85pd9vula5s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
