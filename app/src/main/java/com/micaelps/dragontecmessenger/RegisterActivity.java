@@ -1,9 +1,11 @@
 package com.micaelps.dragontecmessenger;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,7 +25,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mEditEmail;
     private EditText mEditPassword;
     private Button mBtnEnter;
-
+    private Button mBtnSelectedPhoto;
+    private Uri mBtnSelectedUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,14 @@ public class RegisterActivity extends AppCompatActivity {
         mEditEmail = findViewById(R.id.edit_email);
         mEditPassword = findViewById(R.id.edit_password);
         mBtnEnter = findViewById(R.id.btn_enter);
+        mBtnSelectedPhoto = findViewById(R.id.btn_selected_photo);
+
+        mBtnSelectedPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectedPhoto();
+            }
+        });
 
         mBtnEnter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +53,22 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==0){
+           mBtnSelectedUri = data.getData();
+        }
+    }
+
+    private void selectedPhoto() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent,0);
     }
 
     private void createUser(){
