@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -65,11 +66,12 @@ public class ContactsActivity extends AppCompatActivity {
                         }
                         List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
                         for(DocumentSnapshot doc:docs){
+
                            User user =  doc.toObject(User.class);
                             Log.d("teste",user.getUsername());
-
-                            adapter.add(new UserItem(user));
-
+                            if(!user.getUuid().equals(FirebaseAuth.getInstance().getUid())){
+                                adapter.add(new UserItem(user));
+                            }
                         }
                     }
                 });

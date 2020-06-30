@@ -89,6 +89,8 @@ public class ChatActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(DocumentReference documentReference) {
                                     Log.d("teste",documentReference.getId());
+                                    editChat.setText(null);
+
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -173,16 +175,8 @@ public class ChatActivity extends AppCompatActivity {
 
          @Override
          public void bind(@NonNull ViewHolder viewHolder, int position) {
-                    TextView txtMessage = viewHolder.itemView.findViewById(R.id.txt_msg);
-             ImageView imgMessage = viewHolder.itemView.findViewById(R.id.img_message_user);
-
+             TextView txtMessage = viewHolder.itemView.findViewById(R.id.txt_msg);
              txtMessage.setText(message.getText());
-             Picasso.get().load(user.getProfileUrl())
-                     .into(imgMessage);
-
-
-
-
 
          }
 
