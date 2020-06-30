@@ -1,5 +1,5 @@
 # DragonTecMessenger
-Aplicativo android personalizado para comunicação entre tecnicos e clientes para sociedade de manutenção e suporte em informática.
+Aplicativo android personalizado para comunicação entre tecnicos e clientes para sociedade de manutenção e suporte em informática DragonTec.
 
 Tecnologias utilizadas:
 
